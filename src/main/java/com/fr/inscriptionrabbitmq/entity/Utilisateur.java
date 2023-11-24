@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "t_utilisateur")
@@ -17,6 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
+@ToString
 public class Utilisateur {
 
     @Id
@@ -32,7 +34,7 @@ public class Utilisateur {
     @Column(name = "mail", length = 25)
     private String mail;
 
-    @Column(name = "isEmailConfirmed", columnDefinition = "false")
+    @Column(name = "isEmailConfirmed")
     private Boolean isEmailConfirmed;
 
 }

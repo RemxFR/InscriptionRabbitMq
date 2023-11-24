@@ -4,13 +4,13 @@ import com.fr.inscriptionrabbitmq.dto.service.UtilisateurService;
 import com.fr.inscriptionrabbitmq.entity.Utilisateur;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping(name = "utilisateur")
+@RestController
+@RequestMapping(value = "utilisateur")
 public class UtilisateurController {
 
     private UtilisateurService utilisateurService;
@@ -19,7 +19,7 @@ public class UtilisateurController {
         this.utilisateurService = utilisateurService;
     }
 
-    @PostMapping(name = "inscription")
+    @PostMapping(value = "inscription")
     public ResponseEntity inscrireUnUtilisateur(@RequestBody Utilisateur utilisateur) {
         Utilisateur utilisateurInscrit = this.utilisateurService.inscrireUtilisateur(utilisateur);
         if (utilisateur == null) {
